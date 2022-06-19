@@ -1,8 +1,9 @@
 const express = require('express');
 const apiRoutes = express.Router();
 
-apiRoutes.get('/a', (req, res) => {
-    res.json({ status: true})
+apiRoutes.post('/new_application', (req, res) => {
+    const body = req.body
+    
 });
 
 module.exports = apiRoutes;
