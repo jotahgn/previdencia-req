@@ -3,8 +3,6 @@ const cep_query = require('cep-promise')
 const apiRoutes = express.Router();
 var bodyParser = require('body-parser')
 
-// var { cpf, nome, rg, nascimento, observacao, nit, cargo, lotacao, estado_civil, matricula, cep, rua, numero, bairro, cidade, estado, email, telefone, celular, dependentes, tipoRequerimento } = data;
-
 apiRoutes.post('/new_application', async (req, res) => {
     try {
         const body = req.body
