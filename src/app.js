@@ -1,5 +1,5 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
+var hbs = require('express-hbs');
 
 require('dotenv').config();
 
@@ -9,12 +9,15 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 app.use(express.static('public'));
-const handlebars = exphbs.create({ extname: '.hbs', });
-app.engine('.hbs', handlebars.engine);
-app.set('view engine', '.hbs');
 
- app.use('/', async (req, res) => {
-    res.json({ porta: porta})
- });
+app.engine('hbs', hbs.express4({
+  partialsDir: __dirname + '/views/partials'
+}));
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
 
-app.listen(porta, () => console.log(`SERVIDOR INICIADO, RODANDO NA PORTA [ ${porta} ]`));
+app.use('/', async (req, res) => {
+  res.json({ porta: porta })
+});
+
+app.listen(porta, () => console.log({ status: 'server running :)' }));

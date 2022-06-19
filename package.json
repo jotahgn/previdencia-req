@@ -2,6 +2,24 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "express-handlebars": "^6.0.6"
-  }
+    "express-handlebars": "^6.0.6",
+    "express-hbs": "^2.4.0"
+  },
+  "name": "previdencia-req",
+  "description": "Sistema para preenchimento de requerimentos previdênciários.",
+  "version": "1.0.0",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jotahgn/previdencia-req.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jotahgn/previdencia-req/issues"
+  },
+  "homepage": "https://github.com/jotahgn/previdencia-req#readme"
 }
