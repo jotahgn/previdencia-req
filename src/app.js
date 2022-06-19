@@ -1,5 +1,6 @@
 const express = require('express');
 var hbs = require('express-handlebars');
+const apiRoutes = require('./routes/index');
 
 require('dotenv').config();
 
@@ -9,9 +10,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
+app.use('/api', apiRoutes);
 
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
+
 
 app.get('/', (req, res) => {
   res.render('home')
