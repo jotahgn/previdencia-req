@@ -4,20 +4,17 @@ var hbs = require('express-hbs');
 require('dotenv').config();
 
 const app = express();
-const porta = process.env.PORT || 5000;
+const porta = process.env.PORT || 80;
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
-app.engine('hbs', hbs.express4({
-  partialsDir: __dirname + '/views/partials'
-}));
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
-app.use('/', async (req, res) => {
-  res.json({ porta: porta })
-});
+app.get('/', (req, res) => {
+  res.render('home')
+})
 
 app.listen(porta, () => console.log({ status: 'server running :)' }));
