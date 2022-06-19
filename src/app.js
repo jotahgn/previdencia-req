@@ -1,5 +1,5 @@
 const express = require('express');
-var hbs = require('express-hbs');
+var hbs = require('express-handlebars');
 
 require('dotenv').config();
 
