@@ -1,23 +1,7 @@
-const mongoClient = require('mongodb').MongoClient;
-const mongoDbUrl = 'mongodb://127.0.0.1:27017';
-let mongodb;
-
-function connect(callback){
-    mongoClient.connect(mongoDbUrl, (err, db) => {
-        mongodb = db;
-        callback();
-    });
-}
-function get(){
-    return mongodb;
-}
-
-function close(){
-    mongodb.close();
-}
-
-module.exports = {
-    connect,
-    get,
-    close
-};
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/reqsystem').then((result) => {
+    console.log({ status: true, message: 'Conectado ao banco de dados com sucesso :D' })
+}).catch((err) => {
+    console.log('não foi possivel se conectar ao banco de dados.')
+});

@@ -4,7 +4,7 @@ const apiRoutes = require('./routes/index');
 var bodyParser = require('body-parser')
 
 require('dotenv').config();
-
+require('./database/db/index')
 
 const app = express();
 const porta = process.env.PORT || 80;
