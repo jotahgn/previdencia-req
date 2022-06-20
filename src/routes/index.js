@@ -1,10 +1,8 @@
 const express = require('express');
-const aposentadoria = require('./rota_aposentadoria');
-const simples = require('./rota_simples');
-
 const apiRouter = express.Router();
 
-apiRouter.use('/aposentadoria', aposentadoria);
-apiRouter.use('/simples', simples);
+apiRouter.use('/aposentadoria', require('./rota_aposentadoria'))
+apiRouter.use('/simples', require('./rota_simples'))
+apiRouter.use('/', require('./rota_busca'))
 
 module.exports = apiRouter;
