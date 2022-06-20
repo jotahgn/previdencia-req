@@ -34,6 +34,10 @@ const aposentadoriaSchema = new Schema({
         type: String,
         required: true
     },
+    endereco: {
+        type: Object,
+        required: true
+    },
     email: {
         type: String,
         required: true

@@ -37,8 +37,10 @@ app.get('/', async (req, res) => {
       );
     })
   })
+})
 
-
+app.get('/buscar', async (req, res) => {
+  res.render('buscar')
 })
 
 
